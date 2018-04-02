@@ -88,7 +88,9 @@ class Client:
         :param path: {str} optional path
         :return: {Client} for a batch and {bool} for non-batch
         """
-        assert isinstance(data, dict), "Data has to be a dict type."
+        assert isinstance(data, dict) or \
+            isinstance(data, str) or \
+            isinstance(data, list), "Data has to be dict, list or str type."
 
         request = {
             'topic': 'record',
